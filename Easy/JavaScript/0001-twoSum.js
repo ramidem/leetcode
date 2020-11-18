@@ -1,5 +1,5 @@
-// const nums = [2, 7, 11, 15];
-const nums = [];
+const nums = [2, 7, 11, 15];
+// const nums = [];
 const target = 9;
 
 // const nums = [3, 2, 4];
@@ -12,24 +12,22 @@ const target = 9;
  * @return {number[]} [0, 0] indices of the nums
  */
 function twoSum(nums, target) {
-  if (nums.length < 2) return [];
-  let indices = [];
-  // debugger;
+  let loop = true;
   let index = 0;
-  while (indices.length < 2) {
+  while (loop) {
     for (let i = 0; i < nums.length; i++) {
       if (index !== i) {
         if (nums[index] + nums[i] === target) {
-          indices.push(index);
-          indices.push(i);
+          loop = false;
+          return [index, i];
         }
       }
     }
     index++;
   }
-  return indices;
 }
 
 console.log(twoSum(nums, target));
 
-// 11/18/2020 10:50 - Accepted - 7136 ms - 46.8 MB -javascript
+// 11/18/2020 11:00 - Accepted - 8760 ms - 47.1 MB - javascript
+// 11/18/2020 10:50 - Accepted - 7136 ms - 46.8 MB - javascript
